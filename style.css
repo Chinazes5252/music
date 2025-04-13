@@ -1,0 +1,152 @@
+/* style.css (улучшенный) */
+:root {
+  --primary: #1DB954;
+  --background: #0f0f0f;
+  --surface: rgba(255, 255, 255, 0.1);
+  --text-primary: #fff;
+  --text-secondary: #b3b3b3;
+  --border-radius: 12px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.glass-container {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  background: linear-gradient(45deg, #1DB954, #1ED760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-box {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.glass-button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.track-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.track-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-2px);
+}
+
+.track-artwork {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.track-info {
+  flex: 1;
+}
+
+.track-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.track-artist {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.track-action {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.track-action:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .glass-container {
+    padding: 1rem;
+    border-radius: 0;
+  }
+  
+  .track-card {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .track-artwork {
+    width: 50px;
+    height: 50px;
+  }
+}
