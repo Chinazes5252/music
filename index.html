@@ -6,12 +6,12 @@
     <title>MusicBot</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        // Ваш URL от LocalTunnel/проброса портов
+        // локальные тунели
         const API_BASE_URL = Telegram.WebApp.initDataUnsafe.user 
         ? 'https://5c8a0c659e34d673720cd35c2094bdca.serveo.net' 
         : 'http://localhost:8080';
         
-        // Конфиг для инициализации
+        // Конфиг для ини
         const BotConfig = {
             debug: false,
             playerControls: true,
