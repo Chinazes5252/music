@@ -1,4 +1,4 @@
-// app.js (исправленный)
+// app.js не работают proxy api call
 class MusicPlayer {
     constructor() {
         this.userId = null;
