@@ -12,22 +12,19 @@ class MusicPlayer {
 
         this.initEventListeners();
     }
-
+    
     async request(path, options = {}) {
-        // Добавляем заголовок авторизации
-        options.headers = {
-            ...options.headers,
-            'X-Token': this.token,
-            'X-Telegram-Init-Data': Telegram.WebApp.initData
-        };
-
+        // Гарантируем объект headers
+        if (!options.headers) options.headers = {};
+        options.headers['X-Token'] = this.token;
+        options.headers['X-Telegram-Init-Data'] = Telegram.WebApp.initData;
+    
         const response = await fetch(`${API_BASE_URL}${path}`, options);
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);
         }
         return response;
     }
-
     async search() {
         const query = document.getElementById('search-input').value.trim();
         if (!query) return;
